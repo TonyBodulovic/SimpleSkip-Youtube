@@ -1,0 +1,58 @@
+{
+
+    "name" : "SimpleSkip",
+    "version" : "1.0",
+    "manifest_version" : 3,
+    "description": "A simple ad-skipping extension for youtube.",
+
+    "icons" : {
+        "512": "assets/icons/SimpleSkip-512.png",
+        "256": "assets/icons/SimpleSkip-256.png",
+        "128": "assets/icons/SimpleSkip-128.png",
+        "64": "assets/icons/SimpleSkip-64.png",
+        "48": "assets/icons/SimpleSkip-48.png",
+        "32": "assets/icons/SimpleSkip-32.png",
+        "16": "assets/icons/SimpleSkip-16.png"
+    },
+
+    "content_scripts" : [
+
+        {
+            "matches" : ["*://www.youtube.com/*"],
+            "js" : [
+                "js/utils/elementHelper.js",
+                "js/utils/storageHelper.js",
+                "js/utils/settingsHelper.js",
+
+                "js/elements/BlackoutOverlay.js",
+                "js/elements/CustomSkipButton.js",
+
+                "js/utils/debugTools.js",
+                "js/simpleskip.js"
+            ],
+            "css" : ["css/simpleskip.css"],
+            "run_at" : "document_end"
+        }
+
+    ],
+
+    "permissions" : ["storage"],
+
+    "host_permissions" : ["*://www.youtube.com/", "*://www.youtube.com/*"],
+
+    "web_accessible_resources" : [
+        {
+            "resources" : [
+                "assets/images/skip.png",
+                "settings/settings.json"
+            ],
+            "matches" : ["*://www.youtube.com/*"]
+        }
+    ],
+
+    "action" : {
+        "default_title" : "SimpleSkip",
+        "default_popup" : "html/popup.html"
+    }
+
+}

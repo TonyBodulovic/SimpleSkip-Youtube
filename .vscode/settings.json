@@ -1,0 +1,7 @@
+{
+    "commentAnchors.tagHighlights.enabled": true,
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "textMateRules": []
+    }
+}
