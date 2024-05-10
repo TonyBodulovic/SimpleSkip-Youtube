@@ -1,0 +1,55 @@
+----------------------------
+DONE:
+
+-   Removed promise timeout from individual instances.
+    - These are now bundled into promiseElement() functions
+    - Default maxwait is 0 (infinite)
+
+-   Removed individual element array management from promise functions.
+    - This is now bundled into promiseElement() functions as an index parameter
+    - Default parameter is 0
+
+----------------------------
+TO-DO:
+
+Refactor code into files
+    settingsHelper
+    elementPromises
+
+----------------------------
+NOTES:
+
+-Unwrapped key elements allows for functions to run when required elements
+are already loaded instead of waiting for all elements
+
+-Make element retrieval and creation more modular
+
+(Maybe) Remove last call to timestamp in skip()
+
+Fix recursive skipper
+    sets video time to 0 even if video wasnt stopped
+    sometimes continues running
+    sometimes doesnt skip
+
+Ideas for new ad marker::
+
+document.getElementsByClassName("ytp-exp-ppp-update")[0].getVideoStats()["prerolls"];
+Checking video wrapper
+If null -> no ad
+If "ad" -> ad
+
+wrapper.nextVideo() -> skips to next -> works on ads
+Nope! it goes to the NEXT VIDEO it doesnt just skip the ad
+
+-^None of that works these are all functions within youtubes js
+they are not publicly accessible only through chrome console which is useless
+
+Need to refactor code into namespaces to avoid any collisions in js
+Need to refactor unncessary vars into lets
+
+
+COLLISIONS DONT HAPPEN!!
+Turns out that the content scripts are isolated into "worlds" -> according to
+the chrome documentation.
+
+Just need to keep track of global variables now and thats it

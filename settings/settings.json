@@ -1,0 +1,124 @@
+{
+    "MasterSwitch" : {
+        "id": "MasterSwitch",
+        "displayname": "Master Switch",
+        "description": "Master Switch",
+        "accepted_values": [true,false],
+        "selected_value": true,
+        "prereqs": null,
+        "optiontype": "Master"
+    },
+
+    "SkipAds" : {
+        "id": "SkipAds",
+        "displayname" : "Skip ads",
+        "description": "Skips ads automatically",
+        "accepted_values": [true,false],
+        "selected_value": true,
+        "prereqs": null,
+        "optiontype": "Toggle"
+    },
+
+    "InsertSkipButton" : {
+        "id": "InsertSkipButton",
+        "displayname" : "Insert skip button",
+        "description": "Inserts a skip button into the video player",
+        "accepted_values": [true,false],
+        "selected_value": true,
+        "prereqs": null,
+        "optiontype": "Toggle"
+    },
+
+    "AutoMute" : {
+        "id" : "AutoMute",
+        "displayname" : "Mute ads",
+        "description": "Automatically mutes ads",
+        "accepted_values": [true,false],
+        "selected_value": true,
+        "prereqs": null,
+        "optiontype": "Toggle"
+    },
+
+    "BlackOut" : {
+        "id" : "BlackOut",
+        "displayname" : "Black out ads",
+        "description": "Applies a black screen to advertisements",
+        "accepted_values": [true,false],
+        "selected_value": true,
+        "prereqs": null,
+        "optiontype": "Toggle"
+    },
+
+
+    
+    "SkipMethod" : {
+        "id": "SkipMethod",
+        "displayname" : "Skip method",
+        "description": "Determines the skip method\n\nSet: tries to set the video to a specific time\n\nRecursive: continuously adds a set amount to the video",
+        "accepted_values": ["Set","Recursive"],
+        "selected_value": "Set",
+        "prereqs": null,
+        "optiontype": "Dropdown"
+    },
+
+    "SkipVideoSearchTimeout" : {
+        "id": "SkipVideoSearchTimeout",
+        "displayname" : "Skip video button search timeout",
+        "description": "Value in seconds before SimpleSkip gives up on trying to find the video when the skip button is pressed",
+        "accepted_values": [1000,5000,10000,20000],
+        "selected_value": 1000,
+        "prereqs": ["InsertSkipButton"],
+        "optiontype": "Dropdown"
+    },
+
+    "SetSkipTime" : {
+        "id": "SetSkipTime",
+        "displayname" : "Set skip time",
+        "description": "Value in seconds to set the ads to",
+        "accepted_values": [86400,10000000,2147483648],
+        "selected_value": 10000000,
+        "prereqs": null,
+        "optiontype": "Dropdown"
+    },
+
+    "RecursiveSkipTime" : {
+        "id": "RecursiveSkipTime",
+        "displayname" : "Recursive skip time",
+        "description": "Value in seconds to add recursively",
+        "accepted_values": [1,2,5,10,20,30,60],
+        "selected_value": 1,
+        "prereqs": null,
+        "optiontype": "Dropdown"
+    },
+
+    "RecursiveSkipDelay" : {
+        "id": "RecursiveSkipDelay",
+        "displayname": "Recursive skip delay",
+        "description": "Value in ms between recursive addition",
+        "accepted_values": [200,500,1000,2000],
+        "selected_value": 200,
+        "prereqs": null,
+        "optiontype": "Dropdown"
+    },
+
+    "MaxRecursiveTime" : {
+        "id": "MaxRecursiveTime",
+        "displayname": "Max recursion duration",
+        "description": "Value in seconds to end recursion and skip to end",
+        "accepted_values": [5,10,20,60,86400],
+        "selected_value": 10,
+        "prereqs": null,
+        "optiontype": "Dropdown"
+    },
+
+    "DebugPrint" : {
+        "id": "DebugPrint",
+        "displayname": "Debug print",
+        "description": "Prints debug statements",
+        "accepted_values": [true,false],
+        "selected_value": true,
+        "prereqs": null,
+        "optiontype": "Toggle"
+    }
+    
+}

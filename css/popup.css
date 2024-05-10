@@ -1,0 +1,268 @@
+/* SECTION COLORS */
+
+html{
+    --popupborder: rgb(0,0,0);
+    --mainbackground: rgb(100,100,100);
+
+    --simpleskip-backround: #303030;
+    --simpleskip-left: #FFFFFF;
+    --simpleskip-right: #ED0000;
+
+    --mastertogglebackground-off: rgb(10, 10, 10);
+    --mastertogglebackground-on: rgb(200, 200, 200);
+    --mastertoggleball-off: rgb(125, 0, 0);
+    --mastertoggleball-on: #ED0000;
+
+    --togglebackground-off: rgb(10,10,10);
+    --togglebackground-on: rgb(200,200,200);
+    --toggleball-off: rgb(110,10,10);
+    --toggleball-on: rgb(200,0,0);
+
+    --settingsitemtitle: rgb(255,255,255);
+    --settignsitemdesc: rgb(200,200,200);
+}
+
+/* SECTION General Classes */
+
+html{
+    min-width: 400px;
+    width: 400px;
+    max-width: 400px;
+
+    min-height: 400px;
+    height: 400px;
+    max-height: 400px;
+
+    padding: 0px;
+    margin: 0px;
+    
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    margin: 0px;
+    padding: 0px;
+
+    border: 2px solid var(--popupborder);
+    background-color: var(--mainbackground);
+}
+
+button{
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+    visibility: hidden;
+    
+    height: 0px;
+    max-height: 0px;
+    width: 0px;
+    max-width: 0px;
+}
+
+/* SECTION Master Switch */
+/* CLASS Wrapper */
+.MasterSwitch-Wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 40px;
+
+    border-bottom: 2px solid var(--popupborder);
+    background-color: var(--simpleskip-backround);
+}
+
+/* CLASS Title */
+.MasterSwitch-Title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    user-select: none;
+}
+
+.MasterSwitch-Title > span:first-child{
+    color: var(--simpleskip-left);
+}
+.MasterSwitch-Title > span:last-child{
+    color: var(--simpleskip-right);
+}
+
+/* CLASS Toggle */
+.MasterSwitch-Toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 5px;
+
+    width: 40px;
+    height: 20px;
+
+    border-radius: 10px;
+    border-style: none;
+
+    transition: background-color 0.75s ease;
+}
+.MasterSwitch-Toggle[data-state="false"]{
+    background-color: var(--mastertogglebackground-off);
+}
+.MasterSwitch-Toggle[data-state="true"]{
+    background-color: var(--mastertogglebackground-on);
+}
+
+/* CLASS ToggleBall */
+.MasterSwitch-ToggleBall{
+    width: 18px;
+    height: 18px;
+    
+    border-radius: 10px;
+    transition: transform 0.5s ease, background-color 0.75s ease;
+}
+.MasterSwitch-Toggle[data-state="false"] > .MasterSwitch-ToggleBall{
+    background-color: var(--mastertoggleball-off);
+    transform: translate(-50%);
+}
+.MasterSwitch-Toggle[data-state="true"] > .MasterSwitch-ToggleBall{
+    transform: translate(50%);
+    background-color: var(--mastertoggleball-on);
+}
+
+/* CLASS Settings */
+
+.Settings{
+    display: flex;
+    flex-direction: column;
+
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    max-height: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.Settings::-webkit-scrollbar{
+    width: 10px;
+}
+.Settings::-webkit-scrollbar-thumb{
+    background-color: var(--mastertogglebackground-on);
+    border-radius: 10px;
+}
+.Settings::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+/* CLASS Setting */
+
+.Setting{
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 100%;
+    height: fit-content;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.Setting > div > p{
+    line-break: normal;
+    margin: 0px;
+    margin-right: 10px;
+    color: white;
+    font-size: 15px;
+    user-select: none;
+    font-weight: 600;
+}
+
+.Setting > div > p:last-child{
+    font-size: 12px;
+    color: var(--settignsitemdesc);
+    margin-right: 10px;
+}
+
+.Setting > select{
+    align-self: top;
+    margin-top:5px;
+    min-width: 100px;
+    max-width: 100px;
+    height: fit-content;
+    outline: none;
+
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border: none;
+
+    background-color: var(--mastertogglebackground-on);
+    transition: background-color 0.75s ease;
+}
+.Setting > select:hover{
+    background-color: white;
+    transition: background-color 0.75s ease;
+}
+.Setting > option{
+    user-select: none;
+}
+
+.Setting > .Toggle{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 16px;
+
+    border-radius: 10px;
+    border-style: none;
+
+    transition: background-color 0.75s ease;
+
+}
+.Setting > .Toggle[data-state="false"]{
+    background-color: var(--togglebackground-off);
+}
+.Setting > .Toggle[data-state="true"]{
+    background-color: var(--togglebackground-on);
+}
+
+.Toggle > .ToggleBall{
+    width: 14px;
+    height: 14px;
+    
+    border-radius: 10px;
+    transition: transform 0.5s ease, background-color 0.75s ease;
+}
+
+.Toggle[data-state="true"] > .ToggleBall{
+    background-color: var(--toggleball-on);
+    transform: translate(50%);
+}
+.Toggle[data-state="false"] > .ToggleBall{
+    background-color: var(--toggleball-off);
+    transform: translate(-50%);
+}

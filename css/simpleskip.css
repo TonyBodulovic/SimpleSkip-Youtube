@@ -1,0 +1,126 @@
+/* GROUP General */
+
+button{
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* GROUP Notification */
+
+.notification{
+    display: grid;
+    grid-template-areas: "Title Close" "Content Content";
+    grid-template-columns: 1fr auto;
+    column-gap: 15px;
+    row-gap: 20px;
+
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+
+    width: fit-content;
+    min-width: 400px;
+    max-width: 100%;
+    height: fit-content;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border: 2px solid rgb(0,0,0);
+    border-radius: 10px;
+    background-color: #303030;
+    /* box-shadow: white 0px 0px 1px; */
+
+    z-index: 200000;
+}
+
+.notification-title{
+    grid-area: Title;
+    font-size: 25px;
+    font-weight: 900;
+}
+.notification-title > span{
+    color: #DDDDDD;
+    /* text-shadow: rgb(100,100,100) 0px 0px 10px; */
+}
+.notification-title > span:last-child{
+    color: #FF1111;
+    /* text-shadow: #202020 0px 0px 10px; */
+}
+
+.notification-content{
+    grid-area: Content;
+    font-size: 15px;
+    color: white;
+}
+
+.notification-reload{
+    font-weight: 900;
+    color: #BBBBBB;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.notification-closebutton{
+    grid-area: Close;
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(100,100,100);
+}
+.notification-closebutton:hover{
+    outline: 1px solid #FF1111;
+}
+
+/* GROUP Custom Elements */
+
+/* CLASS BlackoutOverlay */
+BlackoutOverlay{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 200000;
+
+    display: none;
+    
+    font-size: 25px;
+    color: white;
+
+    background-color: rgb(0,0,0);
+    outline: 4px solid black;
+}
+BlackoutOverlay > div{
+    display: flex;
+    margin-left: 35px;
+    margin-bottom: 35px;
+    height: fit-content;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+/* CLASS CustomSkipButton */
+CustomSkipButton{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+
+}
+CustomSkipButton:hover{
+    cursor: pointer;
+}
+CustomSkipButton img{
+
+    max-height: 50%;
+    justify-self: center;
+    align-self: center;
+
+}

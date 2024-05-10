@@ -1,0 +1,27 @@
+
+
+<id> : {
+    id : <id>,
+    datatype: <data>,
+    displayname: <displayname>,
+    accepted_values: [ <value> ],
+    selected_value: <value>,
+    prereqs: [ <prereq:[values]> ],  -> Not including master
+    optiontype: <optiontype>
+} 
+
+
+
+MasterSwitch := True | False
+
+InsertSkipButton := True | False
+
+SkipMethod := Set | Recursive
+
+SkipVideoSearchTimeout := Value (ms)
+
+SetSkipTime := Value (seconds)
+
+RecursiveSkipTime := Value (seconds)
+RecursiveSkipDelay := Value (milliseconds)
+
